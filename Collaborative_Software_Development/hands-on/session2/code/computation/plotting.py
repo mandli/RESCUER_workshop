@@ -10,6 +10,7 @@ def plot_field(
     u: np.ndarray,
     out_path: Optional[str | Path] = None,
     title: str = "Concentration field",
+    params: Optional[str] = None, 
 ) -> None:
     """
     Plot a 2D field using imshow.
@@ -25,6 +26,10 @@ def plot_field(
     """
     fig, ax = plt.subplots(figsize=(5, 4))
     im = ax.imshow(u, origin="lower", cmap="viridis")
+
+    if params:
+    title = f"{title}\n({params})"
+
     ax.set_title(title)
     fig.colorbar(im, ax=ax, label="Concentration")
 
