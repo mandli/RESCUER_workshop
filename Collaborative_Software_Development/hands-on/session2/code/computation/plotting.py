@@ -10,6 +10,7 @@ def plot_field(
     u: np.ndarray,
     out_path: Optional[str | Path] = None,
     title: str = "Concentration field",
+    params: Optional[str] = None, 
 ) -> None:
     """
     Plot a 2D field using imshow.
